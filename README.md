@@ -4,7 +4,7 @@ Making an Azure AI Foundry Agent available in M365 Copilot, using M365 Agents SD
 To use this sample, you'll need:
 
 - Visual Studio 2022 17.14 (May 2025)
-- Microsoft 365 Agents Toolkit (feature named 'Microsoft Teams development tools' in VS Installer)
+- Microsoft 365 Agents Toolkit (feature named 'Microsoft 365 Agents Toolkit' in VS Installer under "Individual components")
 - Use the Azure CLI and 'az login' on your Azure tenant containing your Azure AI Foundry project. Your identity will be used to connect to the Azure AI Foundry Project.
 
 Then, create an Agent in the Azure AI Foundry portal, under the project part. Configure the model, instructions, tools, etc. you'd like. 
