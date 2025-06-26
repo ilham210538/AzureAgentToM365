@@ -173,7 +173,7 @@ Go back to your agent in the Azure AI Foundry projet portal.
             "name": "end_date",
             "in": "query",
             "required": false,
-            "description": "The end date of the time series data in ISO format (YYYY-MM-DD).  Defines the upper limit of the data range.",
+            "description": "The end date of the time series data in ISO format (YYYY-MM-DD).  Defines the upper limit of the data range. Must be different from `start_date`",
             "schema": {
               "type": "string",
               "format": "date"
