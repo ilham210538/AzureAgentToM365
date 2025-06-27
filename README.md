@@ -96,6 +96,12 @@ Sample demo in Teams:
 Sample demo in M365 Copilot:
 ![M365 Copilot Foundry Agent](images/screen009.jpg)
 
+# Additional ressources 
+
+* [Connect a bot to Twilio (SMS)](https://learn.microsoft.com/en-us/azure/bot-service/bot-service-channel-connect-twilio?view=azure-bot-service-4.0)
+* [Connect a bot to Slack](https://learn.microsoft.com/en-us/azure/bot-service/bot-service-channel-connect-slack?view=azure-bot-service-4.0)
+* A complete step-by-step lab on this topic: [Build your own agent with the M365 Agents SDK and Semantic Kernel](https://microsoft.github.io/copilot-camp/pages/custom-engine/agents-sdk/)
+
 # (Optional) Tutorial - Creating the Stock Agent in Azure AI Foundry
 
 If you'd like to use the same Azure AI Foundry Agent I've used in my video & screenshots, here are the steps to follow.
@@ -103,7 +109,7 @@ If you'd like to use the same Azure AI Foundry Agent I've used in my video & scr
 * Create a new Agent in Foundry with the following details:
     * Name: "Stocks Agent"
     * Deployment: Use gpt-4o or gpt4.1 (works well also with gpt4-turbo)
-    * Instructions: "You are an agent to search for a specific stock value using the function 'getTimeSeries'. Show the data in a table."
+    * Instructions: "You are an agent to search for a specific stock value using the function 'getTimeSeries'. Show the data in a table except if there is a unique value returned. end_date MUST be strictly superior to start_date, never send the same value for the 2 parameters"
     * Agent Description: "Retrieve the value of a stock at a specific time"
 
 * Create a connection to manage the auth key to the API we'd like to call:
@@ -163,7 +169,7 @@ Go back to your agent in the Azure AI Foundry projet portal.
             "name": "start_date",
             "in": "query",
             "required": false,
-            "description": "The start date of the time series data in ISO format (YYYY-MM-DD).  Must be greater than `outputsize` if used alone.",
+            "description": "The start date of the time series data in ISO format (YYYY-MM-DD).  Must be greater than `outputsize` if used alone. Must be absolutely strictly inferior to `end_date`",
             "schema": {
               "type": "string",
               "format": "date"
@@ -173,7 +179,7 @@ Go back to your agent in the Azure AI Foundry projet portal.
             "name": "end_date",
             "in": "query",
             "required": false,
-            "description": "The end date of the time series data in ISO format (YYYY-MM-DD).  Defines the upper limit of the data range. Must be different from `start_date`",
+            "description": "The end date of the time series data in ISO format (YYYY-MM-DD).  Defines the upper limit of the data range. Must be absolutely strictly superior to `start_date`",
             "schema": {
               "type": "string",
               "format": "date"
