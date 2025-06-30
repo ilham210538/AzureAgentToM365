@@ -1,5 +1,9 @@
 # Azure AI Foundry Agent To M365 Copilot
-Making an Azure AI Foundry Agent available in M365 Copilot, using M365 Agents SDK/Toolkit
+Making an Azure AI Foundry Agent available in M365 Copilot, using M365 Agents SDK/Toolkit.
+
+View the video to see how it works and part of the tutorial:
+
+[![Video of the sample in action with some associated tutorial step-by-step](https://img.youtube.com/vi/U9Yv2vjKYbI/0.jpg)](https://www.youtube.com/watch?v=U9Yv2vjKYbI)
 
 To use this sample, you'll need:
 
